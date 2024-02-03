@@ -1,0 +1,17 @@
+{
+  "name": "capstoneproject",
+  "version": "1.0.0",
+  "description": "Capstone Project - MERN ECommerce",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shumeng Guo, Yike Ying, Yuan Jiang, Manlin Situ, I-Ting Lee",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.1"
+  }
+}
