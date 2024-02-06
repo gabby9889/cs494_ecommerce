@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node backend/app.js",
-    "dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/app.js",
-    "prod": "NODE_ENV=PRODUCTION & node backend/app.js"
+    "dev": "NODE_ENV=DEVELOPMENT nodemon backend/app.js",
+    "prod": "NODE_ENV=PRODUCTION node backend/app.js"
   },
   "author": "Shumeng Guo, Yike Ying, Yuan Jiang, Manlin Situ, I-Ting Lee",
   "license": "ISC",
