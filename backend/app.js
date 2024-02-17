@@ -11,7 +11,6 @@ dotenv.config({ path: 'backend/config/config.env' });
 // connectiong to database
 connectDatabase();
 
-//import all routes
 app.use(express.json());
 
 import productRoutes from "./routes/products.js";
