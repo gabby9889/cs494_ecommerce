@@ -7,7 +7,7 @@ export default (err, req, res, next) => {
 
     if (process.env.NODE_ENV === "DEVELOPMENT") {
         res.status(error.statusCode).json( {
-            meesage: error.message,
+            message: error.message,
             error: err,
             stack: err?.stack,
         });        
@@ -17,5 +17,5 @@ export default (err, req, res, next) => {
         res.status(error.statusCode).json( {
             meesage: error.message,
         });        
-    }
+    }                                               
 }

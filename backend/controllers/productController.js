@@ -1,6 +1,7 @@
 
 import Product from "../models/product.js";
 import ErrorHandler from "../utils/errorHandler.js";
+import catchAsyncErrors from "../middlewares/catchAsyncErrors.js";
 
 export const getProducts = async (req, res) => {
 
@@ -22,7 +23,7 @@ export const newProduct = async (req, res) => {
 };
 
 // Get single product details => /api/v1/products/:id
-export const getProductDetails = async (req, res, next) => {
+export const getProductDetails = catchAsyncErrors(async (req, res, next) => {
     const product = await Product.findById(req?.params?.id)
 
     if (!product) {
@@ -34,10 +35,10 @@ export const getProductDetails = async (req, res, next) => {
         product,
     });
 
-};
+});
 
 // update product details => /api/v1/products/:id
-export const updateProduct = async (req, res) => {
+export const updateProduct = catchAsyncErrors(async (req, res) => {
     let product = await Product.findById(req?.params?.id)
 
     if (!product) {
@@ -52,10 +53,10 @@ export const updateProduct = async (req, res) => {
         product,
     });
 
-};
+});
 
 // delete product => /api/v1/products/:id
-export const deleteProduct = async (req, res) => {
+export const deleteProduct = catchAsyncErrors(async (req, res) => {
     const product = await Product.findById(req?.params?.id)
 
     if (!product) {
@@ -69,4 +70,4 @@ export const deleteProduct = async (req, res) => {
         message: "Product Deleted",
     });
 
-};
+});
