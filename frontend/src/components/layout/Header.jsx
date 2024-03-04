@@ -3,10 +3,10 @@ import React from 'react'
 const Header = () => {
   return (
     <nav className="navbar row">
-      <div className="col-12 col-md-3 ps-5">
+      <div className="col-13 col-md-3 ps-5">
         <div className="navbar-brand">
           <a href="/">
-            <img src="/images/opensky_logo.png" width="200" height="50" alt="OpenSky Logo" />
+            <img src="/images/opensky_logo.png" width="250" height="120" alt="OpenSky Logo" />
           </a>
         </div>
       </div>
