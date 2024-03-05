@@ -6,6 +6,7 @@ const router = express.Router();
 
 
 router.route("/products")
+      .get(getProducts);
       
 router.route("/admin/products")
       .post(isAuthenticatedUser, authorizeRoles("admin"), newProduct);

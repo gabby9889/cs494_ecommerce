@@ -81,7 +81,7 @@ const productSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,  //id of the user
     ref: 'User',
-    required: true,
+    required: false,
   },
 
  

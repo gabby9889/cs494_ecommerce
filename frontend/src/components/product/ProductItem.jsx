@@ -21,7 +21,6 @@ const ProductItem = ({ product }) => {
                     <StarRatings
                         rating={product?.rating}
                         starRatedColor='#ffb829'
-                        changeRating={this.changeRating}
                         numberOfStars={5}
                         name="rating"
                         starDimension="22px"
@@ -39,4 +38,4 @@ const ProductItem = ({ product }) => {
 
     );
 };
-export default Home;
+export default ProductItem;

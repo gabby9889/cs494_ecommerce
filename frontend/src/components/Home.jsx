@@ -1,6 +1,7 @@
 import React from 'react'
 import { MetaData } from './layout/MetaData'
 import { useGetProductsQuery } from '../redux/api/productsApi.js'
+import ProductItem from './product/ProductItem.jsx'
 
 export const Home = () => {
   const { data, isLoading } = useGetProductsQuery();
@@ -16,8 +17,8 @@ export const Home = () => {
 
           <section id="products" className="mt-5">
             <div className="row">
-              {data?.product?.map((product) => (
-                <productItem product={product} />
+              {data?.products?.map((product) => (
+                <ProductItem product={product} />
               ))}
               
               
