@@ -6,13 +6,19 @@ import Loader from './layout/Loader'
 import toast from 'react-hot-toast'
 import CustomPagination from './layout/CustomPagination.jsx'
 import { useSearchParams, useNavigate } from 'react-router-dom'; 
+import Filters from './layout/Filters.jsx'
 
 export const Home = () => {
   let [searchParams] = useSearchParams();
   const page = searchParams.get("page") || 1;
   const keyword = searchParams.get("keyword") || "";
+  const min = searchParams.get("min");
+  const max = searchParams.get("max");
 
   const params = {page, keyword}; 
+
+  min !== null && (params.min = min);
+  max !== null && (params.max = max);
 
   const { data, isLoading, error, isError } = useGetProductsQuery(params);
 
@@ -32,10 +38,10 @@ export const Home = () => {
       <div className="row">
         {keyword && (
           <div className="col-6 col-md-3 mt-5">
-            <p>Filters</p>
+            <Filters />
           </div>
         )}
-        <div className={keyword ? "col-6 col-md-9" : "col-12 col-sm-6 col-md-12"}>
+        <div className={keyword ? "col-6 col-md-9" : "col-6 col-md-12"}>
           <h1 id="products_heading" className="text-secondary">
             {keyword ? `${data?.products?.length} Products found with keyword: ${keyword}` : "Latest Products"}
             </h1>

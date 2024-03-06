@@ -22,7 +22,7 @@ const ProductItem = ({ product, columnSize }) => {
                     <h5 className="card-title">
                       <Link to={`/product/${product?._id}`}>{product?.name}</Link>
                     </h5>
-                    <div className="ratings mt-auto d-flex">
+                    <div className="ratings mt-auto d-fle x">
                       <StarRatings
                           rating={product?.ratings}
                           starRatedColor='#ffb829'
