@@ -6,9 +6,11 @@ export default [
       ratings: 4.7,
       images: [
         {
-          public_id: "outdoorgear/navigation/trailblazergps/frontview",
-          url: "http://example.com/images/outdoorgear/navigation/trailblazergps/frontview.jpg"
-        }
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709665843/Products/GPS_Trailblazer_frontview_uzme0j.jpg"
+          },
+          {
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709665844/Products/GPS_trailblazer_morefront_ljqida.jpg"
+          }
       ],
       category: "Navigation",
       seller: "TrailGear",
@@ -23,9 +25,14 @@ export default [
       ratings: 4.6,
       images: [
         {
-          public_id: "outdoorgear/shelter/evergreenultralight/frontview",
-          url: "http://example.com/images/outdoorgear/shelter/evergreenultralight/frontview.jpg"
-        }
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709664790/Products/Green_tent_frontview_to8pbs.jpg"
+          },
+          {
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709664790/Products/green_tent_measure_nvowvy.jpg"
+          },
+          {
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709664789/Products/green_tent_backview_kdlv3r.jpg"
+          }
       ],
       category: "Protection and Shelter",
       seller: "Outdoor Essentials",
@@ -40,10 +47,15 @@ export default [
       ratings: 4.9,
       images: [
         {
-          public_id: "outdoorgear/footwear/summitseries/frontview",
-          url: "http://example.com/images/outdoorgear/footwear/summitseries/frontview.jpg"
-        }
-      ],
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709666282/Products/hiking_shoes_front_cwzamx.jpg"
+          },
+          {
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709666283/Products/hiking_shoes_side_tvdcbt.jpg"
+          },
+          {
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709666282/Products/hiking_shoes_back_iqxbi7.jpg"
+          }
+  ],
       category: "Clothing and Footwear",
       seller: "Mountain Gear",
       stock: 60,
@@ -57,10 +69,12 @@ export default [
       ratings: 4.8,
       images: [
         {
-          public_id: "outdoorgear/cooking/campfirepro/frontview",
-          url: "http://example.com/images/outdoorgear/cooking/campfirepro/frontview.jpg"
-        }
-      ],
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709666496/Products/cooking_system_dv96eo.jpg"
+          },
+          {
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709666495/Products/cooking_system_all_wwgcjl.jpg"
+          }
+  ],
       category: "Cooking and Hydration",
       seller: "CampTech",
       stock: 70,
@@ -74,8 +88,10 @@ export default [
       ratings: 4.7,
       images: [
         {
-          public_id: "outdoorgear/lighting/nighttrailled/frontview",
-          url: "http://example.com/images/outdoorgear/lighting/nighttrailled/frontview.jpg"
+        "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709666709/Products/NightTrail_LED_Headlamp_wk7zpw.jpg"
+        },
+        {
+        "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709666717/Products/NightTrail_LED_headlight_sjxx3i.jpg"
         }
       ],
       category: "Lighting",
@@ -91,8 +107,13 @@ export default [
       ratings: 4.5,
       images: [
         {
-          public_id: "outdoorgear/tools/multifixpocket/frontview",
-          url: "http://example.com/images/outdoorgear/tools/multifixpocket/frontview.jpg"
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709667392/Products/multifix_pocket_tool_cp3yjd.jpg"
+        },
+        {
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709667391/Products/multifix_pocket_tool_2_pkmkna.jpg"
+        },
+        {
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709667391/Products/multifix_pocket_tool_3_pnqkvj.jpg"
         }
       ],
       category: "Tools and Repair Items",
@@ -108,9 +129,11 @@ export default [
       ratings: 4.9,
       images: [
         {
-          public_id: "outdoorgear/health/trailsafefirstaid/frontview",
-          url: "http://example.com/images/outdoorgear/health/trailsafefirstaid/frontview.jpg"
-        }
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709667471/Products/first_aid_kit_1_rlov3v.jpg"
+          },
+          {
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709667400/Products/first_aid_kit_2_iqa4vm.jpg"
+          }
       ],
       category: "Health and Safety",
       seller: "SafetyGear",
@@ -125,10 +148,12 @@ export default [
       ratings: 4.8,
       images: [
         {
-          public_id: "outdoorgear/misc/ecotrekbackpack/frontview",
-          url: "http://example.com/images/outdoorgear/misc/ecotrekbackpack/frontview.jpg"
-        }
-      ],
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709667688/Products/EcoTrek_backpack_front_rkiiki.jpg"
+          },
+          {
+            "url": "https://res.cloudinary.com/dpmnxmrex/image/upload/v1709667689/Products/EcoTrek_backpack_fg20tm.jpg"
+          }
+  ],
       category: "Miscellaneous",
       seller: "GreenOutdoors",
       stock: 60,
