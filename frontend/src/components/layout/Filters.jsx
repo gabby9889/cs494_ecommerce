@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { getPriceQueryParams } from "../../helpers/helpers";
+import { PRODUCT_CATEGORIES } from "../../constants/constants";
+import StarRatings from "react-star-ratings";
 
 const Filters = () => {
   const [min, setMin] = useState(0);
@@ -14,6 +16,35 @@ const Filters = () => {
     searchParams.has("max") && setMax(searchParams.get("max"));
   }, []);
 
+  
+  // Handle Category & Ratings filter
+  const handleClick = (checkbox) => {
+    const checkboxes = document.getElementsByName(checkbox.name);
+
+    checkboxes.forEach((item) => {
+      if(item !== checkbox) item.checked = false;
+    });
+
+    if(checkbox.checked === false) {
+      //Delete filter from query
+      if(searchParams.has(checkbox.name)) {
+        searchParams.delete(checkbox.name);
+        const path = window.location.pathname + "?" + searchParams.toString();
+        navigate(path);
+      }
+    } else {
+      //Set new filter value if already there
+      if (searchParams.has(checkbox.name)) {
+        searchParams.set(checkbox.name, checkbox.value);
+      } else {
+        //Append new filter
+        searchParams.append(checkbox.name, checkbox.value);
+      }
+
+      const path = window.location.pathname + "?" + searchParams.toString();
+      navigate(path);
+    }
+  }
 
   // Handle price filter
   const handleButtonClick = (e) => {
@@ -26,7 +57,13 @@ const Filters = () => {
     navigate(path);
   };
 
+  const defaultCheckHandler = (checkboxType, checkboxValue) => {
+    const value = searchParams.get(checkboxType);
+    if(checkboxValue === value) return true;
+    return false;
+  }
 
+  
   return (
     <div className="border p-3 filter">
       <h3>Filters</h3>
@@ -63,57 +100,54 @@ const Filters = () => {
       </form>
       <hr />
 
-      <h5 class="mb-3">Category</h5>
+      <h5 className="mb-3">Category</h5>
 
-      <div class="form-check">
+      {PRODUCT_CATEGORIES?.map ((category) => (
+        <div className="form-check">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           name="category"
           id="check4"
-          value="Category 1"
+          value={category}
+          defaultChecked={defaultCheckHandler("category", category)}
+          onClick={(e) => handleClick(e.target)}
         />
-        <label class="form-check-label" for="check4"> Category 1 </label>
+        <label className="form-check-label" for="check4"> 
+          {" "}
+          {category}
+        </label>
       </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          name="category"
-          id="check5"
-          value="Category 2"
-        />
-        <label class="form-check-label" for="check5"> Category 2 </label>
-      </div>
+
+      ))}
+      
 
       <hr />
-      <h5 class="mb-3">Ratings</h5>
+      <h5 className="mb-3">Ratings</h5>
 
-      <div class="form-check">
+      {[5, 4, 3, 2, 1].map((rating) => (
+      <div className="form-check">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           name="ratings"
           id="check7"
-          value="5"
+          value={rating}
+          defaultChecked={defaultCheckHandler("ratings", rating?.toString())}
+          onClick={(e) => handleClick(e.target)}
         />
-        <label class="form-check-label" for="check7">
-          <span class="star-rating">★ ★ ★ ★ ★</span>
+        <label className="form-check-label" for="check7">
+        <StarRatings
+              rating={rating}
+              starRatedColor="#ffb829"
+              numberOfStars={5}
+              name="rating"
+              starDimension="21px"
+              starSpacing="1px"
+            />
         </label>
-      </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="checkbox"
-          name="ratings"
-          id="check8"
-          value="4"
-        />
-        <label class="form-check-label" for="check8">
-          <span class="star-rating">★ ★ ★ ★ ☆</span>
-        </label>
-      </div>
-
+        </div>
+      ))}
     </div>
   );
 };

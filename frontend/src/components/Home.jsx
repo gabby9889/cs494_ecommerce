@@ -5,7 +5,7 @@ import ProductItem from './product/ProductItem.jsx'
 import Loader from './layout/Loader'
 import toast from 'react-hot-toast'
 import CustomPagination from './layout/CustomPagination.jsx'
-import { useSearchParams, useNavigate } from 'react-router-dom'; 
+import { useSearchParams } from 'react-router-dom'; 
 import Filters from './layout/Filters.jsx'
 
 export const Home = () => {
@@ -14,11 +14,15 @@ export const Home = () => {
   const keyword = searchParams.get("keyword") || "";
   const min = searchParams.get("min");
   const max = searchParams.get("max");
+  const category = searchParams.get("category");
+  const ratings = searchParams.get("ratings");
 
   const params = {page, keyword}; 
 
   min !== null && (params.min = min);
   max !== null && (params.max = max);
+  category !== null && (params.category = category);
+  ratings !== null && (params.ratings = ratings);
 
   const { data, isLoading, error, isError } = useGetProductsQuery(params);
 
@@ -51,8 +55,6 @@ export const Home = () => {
               {data?.products?.map((product) => (
                 <ProductItem product={product} columnSize={columnSize}/>
               ))}
-              
-              
             </div>
           </section>
 
