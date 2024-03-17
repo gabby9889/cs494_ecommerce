@@ -13,7 +13,9 @@ import Login from "./components/auth/login";
 import Register from "./components/auth/register";
 import Profile from "./components/user/Profile";
 import UpdateProfile from "./components/user/UpdateProfile";
+import UploadAvatar from "./components/user/UploadAvatar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
+import UpdatePassword from "./components/user/UpdatePassword";
 
 function App() {
   return (
@@ -41,6 +43,23 @@ function App() {
               element={
                 <ProtectedRoute>
                   <UpdateProfile />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/me/upload_avatar"
+              element={
+                <ProtectedRoute>
+                  <UploadAvatar />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/me/update_password"
+              element={
+                <ProtectedRoute>
+                  <UpdatePassword />
                 </ProtectedRoute>
               }
             />
