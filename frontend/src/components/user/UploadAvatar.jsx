@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useUploadAvatarMutation } from "../../redux/api/userApi";
 import { toast } from "react-hot-toast";
 import { useSelector } from "react-redux";
+import MetaData from "../layout/MetaData";
 
 const UploadAvatar = () => {
     const { user } = useSelector((state) => state.auth);
@@ -58,6 +59,7 @@ const UploadAvatar = () => {
 
     return (
         <UserLayout>
+          <MetaData title={"Update Avatar"}/>
         <div className="row wrapper">
         <div className="col-10 col-lg-8">
           <form
