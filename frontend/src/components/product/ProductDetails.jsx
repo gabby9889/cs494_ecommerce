@@ -56,7 +56,7 @@ const ProductDetails = () => {
             name: product?.name,
             price: product?.price,
             image: product?.images[0]?.url,
-            name: product?.stock,
+            stock: product?.stock,
             quantity
         };
         dispatch(setCartItem(cartItem));
@@ -76,7 +76,7 @@ const ProductDetails = () => {
                     className="d-block w-100"
                     src={activeImg}
                     // alt={product?.name}
-                    alt={product.name}
+                    alt={product?.name}
                     width="340"
                     height="390"
                 />
@@ -132,7 +132,7 @@ const ProductDetails = () => {
                 type="number"
                 className="form-control count d-inline"
                 value={quantity}
-                readonly
+                readOnly
                 />
                 <span className="btn btn-primary plus" onClick={increaseQty}>
                     +

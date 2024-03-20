@@ -21,7 +21,7 @@ export const cartSlice = createSlice({
                 state.cartItems = state.cartItems.map((i) => 
                     i.product === isItemExist.product ? item : i);
             } else {
-                state.cartItems = [...state.cartItems, item]
+                state.cartItems = [...state.cartItems, item];
             }
 
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
