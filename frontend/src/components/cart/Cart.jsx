@@ -3,7 +3,7 @@ import MetaData from "../layout/MetaData";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
-import { setCartItem } from "../../redux/features/cartSlice";
+import { setCartItem, removeCartItem } from "../../redux/features/cartSlice";
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -38,6 +38,10 @@ const Cart = () => {
   
       dispatch(setCartItem(cartItem));
     };
+
+    const removeCartItemHandler = (id) => {
+        dispatch(removeCartItem(id));
+    }
 
   return (
     <>
@@ -88,7 +92,11 @@ const Cart = () => {
                             </div>
                             </div>
                             <div className="col-4 col-lg-1 mt-4 mt-lg-0">
-                            <i id="delete_cart_item" className="fa fa-trash btn btn-danger"></i>
+                            <i 
+                                id="delete_cart_item" 
+                                className="fa fa-trash btn btn-danger"
+                                onClick={() => removeCartItemHandler(item?.product)}
+                                ></i>
                             </div>
                         </div>
                         </div>
