@@ -35,10 +35,10 @@ export const newOrder = catchAsyncErrors(async (req, res, next) => {
 
 //Get current user orders => /api/v1/me/order
 export const myOrders = catchAsyncErrors(async (req, res, next) => {
-    const order = await Order.find({ user: req.user._id });
+    const orders = await Order.find({ user: req.user._id });
 
     res.status(200).json({
-        order,
+        orders,
     });
 });
 

@@ -8,7 +8,7 @@ export default (err, req, res, next) => {
 
     // Handler Invalid Mongoose ID Error
     if(err.name === "CastError") {
-        const message = `Resouce not fund. Invalid: ${err?.path}`;
+        const message = `Resouce not found. Invalid: ${err?.path}`;
         error = new ErrorHandler(message, 404);
     }
 

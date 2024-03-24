@@ -4,22 +4,28 @@ import { useGetProductDetailsQuery } from "../../redux/api/productsApi";
 import Loader from "../layout/Loader";
 import { toast } from "react-hot-toast";
 import StarRatings from "react-star-ratings";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCartItem } from "../../redux/features/cartSlice";
 import MetaData from "../layout/MetaData";
+import NewReview from "../reviews/NewReview";
+import ListReviews from "../reviews/ListReviews";
+//import ListReviews from "../reviews/ListReviews";
+
 
 const ProductDetails = () => {
     const params = useParams();
     const dispatch = useDispatch();
     
     const [quantity, setQuantity] = useState(1);
+    const [activeImg, setActiveImg] = useState('');
 
     const { data, isLoading, error, isError } = useGetProductDetailsQuery(
         params?.id
     );
     const product = data?.product;
+    const { isAuthenticated } = useSelector((state) => state.auth);
 
-    const [activeImg, setActiveImg] = useState('');
+    
 
     useEffect(() => {
         setActiveImg(
@@ -75,7 +81,7 @@ const ProductDetails = () => {
                 <img
                     className="d-block w-100"
                     src={activeImg}
-                    // alt={product?.name}
+                    //alt={product?.name}
                     alt={product?.name}
                     width="340"
                     height="390"
@@ -166,11 +172,19 @@ const ProductDetails = () => {
             <hr />
             <p id="product_seller mb-3">Sold by: <strong>{product?.seller}</strong></p>
 
-            <div className="alert alert-danger my-5" type="alert">
+            {isAuthenticated ? (
+            <NewReview productId={product?._id}/>
+            ) : (
+                <div className="alert alert-danger my-5" type="alert">
                 Login to post your review.
-            </div>
+                </div>
+            )}
             </div>
         </div>
+        {product?.reviews?.length > 0 && (
+        <ListReviews reviews={product?.reviews} />
+        )}
+        
     </>
   );
 }
