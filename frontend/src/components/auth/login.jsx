@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import MetaData from "../layout/MetaData";
 
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,12 +30,13 @@ const Login = () => {
       email,
       password,
     };
+
     login(loginData);
   };
 
   return (
     <>
-      <MetaData title={"Log In"}/>
+      <MetaData title={"Login"} />
       <div className="row wrapper">
         <div className="col-10 col-lg-5">
           <form className="shadow rounded bg-body" onSubmit={submitHandler}>
