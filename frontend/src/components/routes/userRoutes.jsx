@@ -24,7 +24,7 @@ const userRoutes = () => {
   return (
     <>
       <Route path="/" element={<Home />} />
-      <Route path="/product/:id" element={<ProductDetails />} />
+      <Route path="/products/:id" element={<ProductDetails />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 

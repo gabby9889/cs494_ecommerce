@@ -20,7 +20,7 @@ const ProductItem = ({ product, columnSize }) => {
                     className="card-body ps-3 d-flex justify-content-center flex-column"
                   >
                     <h5 className="card-title">
-                      <Link to={`/product/${product?._id}`}>{product?.name}</Link>
+                      <Link to={`/products/${product?._id}`}>{product?.name}</Link>
                     </h5>
                     <div className="ratings mt-auto d-fle x">
                       <StarRatings
@@ -34,7 +34,7 @@ const ProductItem = ({ product, columnSize }) => {
                       <span id="no_of_reviews" className="pt-2 ps-2"> {" "}{product?.numOfReviews} </span>
                     </div>
                     <p className="card-text mt-2">${product?.price}</p>
-                    <a href={`/product/${product?._id}`} id="view_btn" className="btn btn-block">
+                    <a href={`/products/${product?._id}`} id="view_btn" className="btn btn-block">
                       View Details
                     </a>
                   </div>
