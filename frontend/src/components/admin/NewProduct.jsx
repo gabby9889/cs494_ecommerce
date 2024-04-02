@@ -51,14 +51,14 @@ const NewProduct = () => {
       <form className="shadow rounded bg-body" onSubmit={submitHandler}>
         <h2 className="mb-4">New Product</h2>
         <div className="mb-3">
-            <label htmlFor="name_field" className="form-label"> 
+          <label htmlFor="name_field" className="form-label">
             {" "}
-            Name{" "} 
-            </label>
+            Name{" "}
+          </label>
           <input
             type="text"
             id="name_field"
-            classNameName="form-control"
+            className="form-control"
             name="name"
             value={name}
             onChange={onChange}
