@@ -21,9 +21,9 @@ router.route("/admin/products/:id/delete_image")
       .put(isAuthenticatedUser, authorizeRoles("admin"), deleteProductImage);
 
 router.route("/admin/products/:id")
-      .put(isAuthenticatedUser, authorizeRoles("admin"), newProduct);
+      .put(isAuthenticatedUser, authorizeRoles("admin"), updateProduct);
 router.route("/admin/products/:id")
-      .delete(isAuthenticatedUser, authorizeRoles("admin"), newProduct);
+      .delete(isAuthenticatedUser, authorizeRoles("admin"), deleteProduct);
 
 router.route("/reviews")
   .get(isAuthenticatedUser, getProductReviews)

@@ -55,14 +55,14 @@ export const productApi = createApi({
             }),    
 
         updateProduct: builder.mutation({
-            query({id, body}) {
+            query({ id, body }) {
                 return {
                     url: `/admin/products/${id}`,
                     method: "PUT",
                     body,
                 };
             },
-            invalidatesTags: [ "AdminProducts", "Product"],
+            invalidatesTags: ["Product", "AdminProducts"],
             }),
 
         uploadProductImages: builder.mutation({
@@ -88,7 +88,7 @@ export const productApi = createApi({
             }),
 
         deleteProduct: builder.mutation({
-            query({ id }) {
+            query(id) {
                 return {
                 url: `/admin/products/${id}`,
                 method: "DELETE",
