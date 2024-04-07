@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useState } from "react";
 
 import { BrowserRouter as Router, Routes } from "react-router-dom";
 
@@ -8,10 +9,18 @@ import { Toaster } from "react-hot-toast";
 
 import useUserRoutes from "./components/routes/userRoutes";
 import useAdminRoutes from "./components/routes/adminRoutes";
+import Chatbot from "./components/admin/ChatBot";
+import ButtonComponent from "./components/admin/ButtonComponent";
 
 function App() {
   const userRoutes = useUserRoutes();
   const adminRoutes = useAdminRoutes();
+  const [showMain, setShowMain] = useState(false);
+
+  // if click once, show the chatbot, if click again, hide the chatbot, and so on
+const handleClick = () => {
+    setShowMain(!showMain);
+}
 
   return (
     <Router>
@@ -20,6 +29,9 @@ function App() {
         <Header />
 
         <div className="container">
+          <ButtonComponent handleClick={handleClick} />
+              {showMain && <Chatbot/>}
+
           <Routes>
             {userRoutes}
             {adminRoutes}

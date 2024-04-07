@@ -29,23 +29,48 @@ const Chatbot = () => {
     }
   };
 
-  return (
-    <div>
-      <div id="chat-area">
-        {chatMessages.map((message, index) => (
-          <div key={index} className={`box ${message.isUser ? '' : 'answer'}`}>
-            {message.text}
-          </div>
-        ))}
+//   return (
+//     <div>
+//       <div id="chat-area">
+//         {chatMessages.map((message, index) => (
+//           <div key={index} className={`box ${message.isUser ? '' : 'answer'}`}>
+//             {message.text}
+//           </div>
+//         ))}
+//       </div>
+//       <div className="submit-form">
+//         <div className="input">
+//           <textarea id="input" cols="40" rows="3"></textarea>
+//           <button onClick={sendMessage}>Submit</button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+return (
+  <div className="chat-container">
+    <div className="chat-header">
+      <div className="avatar">
+            <img src="/images/Chatbot.png" alt="avatar" />
       </div>
-      <div className="submit-form">
-        <div className="input">
-          <textarea id="input" cols="40" rows="3"></textarea>
-          <button onClick={sendMessage}>Submit</button>
-        </div>
-      </div>
+      AI Assistant Bonita
     </div>
-  );
+    <div className="chat-area">
+      {chatMessages.map((message, index) => (
+        <div key={index} className={`message ${message.isUser ? '' : 'answer'}`}>
+          {message.text}
+        </div>
+      ))}
+    </div>
+    <div className="input-area">
+      <textarea id="input" cols="40" rows="3" placeholder="Enter your question..."></textarea>
+      <button onClick={sendMessage} >
+           <i className="fa fa-paper-plane"></i>
+       </button>
+    </div>
+  </div>
+);
 };
 
 export default Chatbot;
