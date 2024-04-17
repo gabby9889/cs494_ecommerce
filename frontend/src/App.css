@@ -691,14 +691,23 @@ button {
   background-color: #0056b3;
  }
  
-.avatar {
+.avatar_chat {
   margin-right: 10px;
   height: 30px;
   width: 30px;
-  border-radius: 80%;
+  border-radius: 50%;
   vertical-align: middle;
   overflow: hidden;
+  display: inline-block;
+  margin-bottom: 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
  }
+
+ .avatar_chat img {
+  width: 100%;
+  height: 100%;
+}
 
  .answer {
   background-color: rgb(222, 255, 234);

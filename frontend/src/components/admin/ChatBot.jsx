@@ -51,7 +51,7 @@ const Chatbot = () => {
 return (
   <div className="chat-container">
     <div className="chat-header">
-      <div className="avatar">
+      <div className="avatar_chat">
             <img src="/images/Chatbot.png" alt="avatar" />
       </div>
       AI Assistant Bonita
